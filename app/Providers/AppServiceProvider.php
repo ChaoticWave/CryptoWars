@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace ChaoticWave\Services\CryptoWars\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
