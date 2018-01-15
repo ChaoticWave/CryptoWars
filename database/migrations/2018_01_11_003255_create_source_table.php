@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoinTable extends Migration
+class CreateSourceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,19 +13,20 @@ class CreateCoinTable extends Migration
      */
     public function up()
     {
-        \Schema::create('coin_t',
+        /**
+         * create the data source table
+         */
+        \Schema::create('source_t',
             function(Blueprint $table) {
                 $table->increments('id');
                 /** @noinspection PhpUndefinedMethodInspection */
-                $table->integer('market_id')->nullable();
+                $table->string('source_id_text', 128)->unique();
+                $table->string('source_name_text', 128);
+                $table->text('host_list_text');
+                $table->string('uri_text', 1024);
                 /** @noinspection PhpUndefinedMethodInspection */
-                $table->string('source_text', 128)->nullable();
-                $table->string('coin_key_text', 32);
-                /** @noinspection PhpUndefinedMethodInspection */
-                $table->text('coin_data_text')->nullable();
+                $table->integer('uct_offset_nbr')->default(0);
                 $table->timestamps();
-
-                $table->unique(['market_id', 'coin_key_text'], 'ux_coin_market');
             });
     }
 
@@ -35,6 +37,6 @@ class CreateCoinTable extends Migration
      */
     public function down()
     {
-        \Schema::dropIfExists('coin_t');
+        Schema::dropIfExists('source_t');
     }
 }

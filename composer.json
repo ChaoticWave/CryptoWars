@@ -8,12 +8,13 @@
     "license":      "MIT",
     "type":         "library",
     "require":      {
-        "php":                     ">=7.0.0",
-        "fideloper/proxy":         "~3.3",
-        "guzzlehttp/guzzle":       "^6.3",
-        "laravel/framework":       "5.5.*",
-        "laravel/tinker":          "~1.0",
-        "ChaoticWave/blue-velvet": "~1.0"
+        "php": ">=7.0.0",
+        "ChaoticWave/blue-velvet": "~1.0",
+        "fideloper/proxy": "~3.3",
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
+        "twbs/bootstrap": "4.0.0-beta.3"
     },
     "require-dev":  {
         "barryvdh/laravel-ide-helper": "^2.2",
@@ -29,7 +30,7 @@
             "database/factories"
         ],
         "psr-4":    {
-            "ChaoticWave\\Services\\CryptoWars\\": "app/"
+            "ChaoticWave\\CryptoWars\\": "app/"
         }
     },
     "autoload-dev": {

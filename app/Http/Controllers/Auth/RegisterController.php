@@ -1,9 +1,9 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Http\Controllers\Auth;
+namespace ChaoticWave\CryptoWars\Http\Controllers\Auth;
 
-use ChaoticWave\Services\CryptoWars\User;
-use ChaoticWave\Services\CryptoWars\Http\Controllers\Controller;
+use ChaoticWave\CryptoWars\User;
+use ChaoticWave\CryptoWars\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \ChaoticWave\Services\CryptoWars\User
+     * @return \ChaoticWave\CryptoWars\User
      */
     protected function create(array $data)
     {

@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    ChaoticWave\Services\CryptoWars\Http\Kernel::class
+    ChaoticWave\CryptoWars\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    ChaoticWave\Services\CryptoWars\Console\Kernel::class
+    ChaoticWave\CryptoWars\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    ChaoticWave\Services\CryptoWars\Exceptions\Handler::class
+    ChaoticWave\CryptoWars\Exceptions\Handler::class
 );
 
 /*

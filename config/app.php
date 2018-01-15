@@ -2,6 +2,8 @@
 return [
     /** App Settings */
     'name'            => env('APP_NAME', 'CryptoWars'),
+    'version'         => '0.1.0',
+    'copyright'       => 'Copyright (c) 2018 / All Rights Reserved.',
     'env'             => env('APP_ENV', 'production'),
     'debug'           => env('APP_DEBUG', false),
     'url'             => env('APP_URL', 'http://localhost'),
@@ -36,12 +38,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\AppServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\AuthServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\EventServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\RouteServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\CryptoDataServiceProvider::class,
-        ChaoticWave\Services\CryptoWars\Providers\CryptoDataSourceServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\AppServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\AuthServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\EventServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\RouteServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\CryptoDataServiceProvider::class,
+        ChaoticWave\CryptoWars\Providers\CryptoDataSourceServiceProvider::class,
     ],
     /** Aliases */
     'aliases'         => [

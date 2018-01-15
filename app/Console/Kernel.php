@@ -1,6 +1,6 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Console;
+<?php namespace ChaoticWave\CryptoWars\Console;
 
-use ChaoticWave\Services\CryptoWars\Console\Commands\UpdateCoins;
+use ChaoticWave\CryptoWars\Console\Commands\UpdateCoins;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

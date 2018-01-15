@@ -1,6 +1,6 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Http\Middleware;
+namespace ChaoticWave\CryptoWars\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;

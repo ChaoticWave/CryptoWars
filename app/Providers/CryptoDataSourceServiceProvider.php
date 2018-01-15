@@ -1,7 +1,7 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Providers;
+<?php namespace ChaoticWave\CryptoWars\Providers;
 
 use ChaoticWave\BlueVelvet\Providers\BaseServiceProvider;
-use ChaoticWave\Services\CryptoWars\Services\CryptoDataSourceService;
+use ChaoticWave\CryptoWars\Services\CryptoDataSourceService;
 
 class CryptoDataSourceServiceProvider extends BaseServiceProvider
 {

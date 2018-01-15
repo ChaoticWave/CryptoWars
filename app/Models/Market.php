@@ -1,4 +1,4 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Models;
+<?php namespace ChaoticWave\CryptoWars\Models;
 
 use ChaoticWave\BlueVelvet\Models\BaseModel;
 
@@ -12,6 +12,18 @@ class Market extends BaseModel
     protected $table = 'market_t';
     /** @var array */
     protected $casts = [
-        'market_data_text' => 'array',
+        'uct_offset_nbr' => 'integer',
     ];
+
+    //******************************************************************************
+    //* Methods
+    //******************************************************************************
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany|\ChaoticWave\CryptoWars\Models\Coin[]
+     */
+    public function coins()
+    {
+        return $this->hasMany(Coin::class);
+    }
 }

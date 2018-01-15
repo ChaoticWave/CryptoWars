@@ -1,6 +1,6 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Exceptions;
+namespace ChaoticWave\CryptoWars\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

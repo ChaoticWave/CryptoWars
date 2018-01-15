@@ -1,8 +1,8 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Http\Controllers\Auth;
+namespace ChaoticWave\CryptoWars\Http\Controllers\Auth;
 
-use ChaoticWave\Services\CryptoWars\Http\Controllers\Controller;
+use ChaoticWave\CryptoWars\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

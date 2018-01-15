@@ -2,6 +2,6 @@
 return [
     'defaults'  => ['guard' => 'web', 'passwords' => 'users',],
     'guards'    => ['web' => ['driver' => 'session', 'provider' => 'users',], 'api' => ['driver' => 'token', 'provider' => 'users',],],
-    'providers' => ['users' => ['driver' => 'eloquent', 'model' => ChaoticWave\Services\CryptoWars\User::class,],],
+    'providers' => ['users' => ['driver' => 'eloquent', 'model' => ChaoticWave\CryptoWars\User::class,],],
     'passwords' => ['users' => ['provider' => 'users', 'table' => 'password_resets', 'expire' => 60,],],
 ];

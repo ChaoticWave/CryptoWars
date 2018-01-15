@@ -1,6 +1,6 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Providers;
+namespace ChaoticWave\CryptoWars\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'ChaoticWave\Services\CryptoWars\Model' => 'ChaoticWave\Services\CryptoWars\Policies\ModelPolicy',
+        'ChaoticWave\CryptoWars\Model' => 'ChaoticWave\CryptoWars\Policies\ModelPolicy',
     ];
 
     /**

@@ -17,12 +17,14 @@ class CreateMarketTable extends Migration
             function(Blueprint $table) {
                 $table->increments('id');
                 /** @noinspection PhpUndefinedMethodInspection */
-                $table->string('market_name_text', 128)->nullable();
+                $table->string('market_id_text', 128)->unique();
+                $table->string('market_name_text', 128);
+                $table->string('market_url_text', 1024);
+                $table->string('lookup_uri_text', 1024);
+                $table->string('country_text', 64);
                 /** @noinspection PhpUndefinedMethodInspection */
-                $table->text('market_data_text')->nullable();
+                $table->integer('uct_offset_nbr')->default(0);
                 $table->timestamps();
-
-                $table->unique('market_name_text', 'ux_market_name');
             });
     }
 

@@ -1,7 +1,7 @@
 <?php namespace Tests;
 
-use ChaoticWave\Services\CryptoWars\Providers\CryptoDataServiceProvider;
-use ChaoticWave\Services\CryptoWars\Services\CryptoDataService;
+use ChaoticWave\CryptoWars\Providers\CryptoDataServiceProvider;
+use ChaoticWave\CryptoWars\Services\CryptoDataService;
 
 class CryptoDataServiceTest extends TestCase
 {

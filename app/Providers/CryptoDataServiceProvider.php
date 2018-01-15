@@ -1,7 +1,7 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Providers;
+<?php namespace ChaoticWave\CryptoWars\Providers;
 
 use ChaoticWave\BlueVelvet\Providers\BaseServiceProvider;
-use ChaoticWave\Services\CryptoWars\Services\CryptoDataService;
+use ChaoticWave\CryptoWars\Services\CryptoDataService;
 
 class CryptoDataServiceProvider extends BaseServiceProvider
 {
@@ -20,8 +20,8 @@ class CryptoDataServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->singleton(static::ALIAS,
-            function($app) {
-                return new CryptoDataService($app, config('crypto', []));
+            function($app, $source = null) {
+                return new CryptoDataService($app, $source);
             });
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Providers;
+namespace ChaoticWave\CryptoWars\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'ChaoticWave\Services\CryptoWars\Http\Controllers';
+    protected $namespace = 'ChaoticWave\CryptoWars\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

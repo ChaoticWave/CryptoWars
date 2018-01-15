@@ -1,4 +1,4 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Services;
+<?php namespace ChaoticWave\CryptoWars\Services;
 
 class CryptoDataSourceService
 {
@@ -35,24 +35,27 @@ class CryptoDataSourceService
     {
         $this->app = $app;
 
-        if (null === $name) {
-            $name = config('crypto.default', 'crypto-compare');
+        if (empty($name)) {
+            $name = config('crypto-wars.default', 'crypto-compare');
         }
 
-        $_config = config('crypto', []);
+        $_config = config('crypto-wars', []);
 
         if (empty($_config)) {
             throw new \InvalidArgumentException('The crypto data source "' . $name . '" is not supported.');
         }
 
+        $_host = config('crypto-wars.sources.' . $name . '.host', 'https://www.cryptocompare.com');
+        $_uri = config('crypto-wars.sources.' . $name . '.uri', '/api/data');
+
         $this->name = $name;
-        $this->apiHost = rtrim(config('crypto.sources.' . $name . '.host', 'https://www.cryptocompare.com'), ' /');
-        $this->apiUri = rtrim(config('crypto.sources.' . $name . '.uri', '/api/data'), ' /');
+        $this->apiHost = rtrim($_host, ' /');
+        $this->apiUri = rtrim($_uri, ' /');
     }
 
-    public function make($name = null)
+    public static function make($app, $name = null)
     {
-        return new static($name);
+        return new static($app, $name);
     }
 
     /**

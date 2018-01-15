@@ -1360,7 +1360,7 @@ namespace Illuminate\Support\Facades {
         public static function handle($input, $output = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::handle($input, $output);
+            return \ChaoticWave\CryptoWars\Console\Kernel::handle($input, $output);
         }
         
         /**
@@ -1374,7 +1374,7 @@ namespace Illuminate\Support\Facades {
         public static function terminate($input, $status)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \ChaoticWave\Services\CryptoWars\Console\Kernel::terminate($input, $status);
+            \ChaoticWave\CryptoWars\Console\Kernel::terminate($input, $status);
         }
         
         /**
@@ -1388,7 +1388,7 @@ namespace Illuminate\Support\Facades {
         public static function command($signature, $callback)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::command($signature, $callback);
+            return \ChaoticWave\CryptoWars\Console\Kernel::command($signature, $callback);
         }
         
         /**
@@ -1401,7 +1401,7 @@ namespace Illuminate\Support\Facades {
         public static function registerCommand($command)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \ChaoticWave\Services\CryptoWars\Console\Kernel::registerCommand($command);
+            \ChaoticWave\CryptoWars\Console\Kernel::registerCommand($command);
         }
         
         /**
@@ -1416,7 +1416,7 @@ namespace Illuminate\Support\Facades {
         public static function call($command, $parameters = array(), $outputBuffer = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::call($command, $parameters, $outputBuffer);
+            return \ChaoticWave\CryptoWars\Console\Kernel::call($command, $parameters, $outputBuffer);
         }
         
         /**
@@ -1430,7 +1430,7 @@ namespace Illuminate\Support\Facades {
         public static function queue($command, $parameters = array())
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::queue($command, $parameters);
+            return \ChaoticWave\CryptoWars\Console\Kernel::queue($command, $parameters);
         }
         
         /**
@@ -1442,7 +1442,7 @@ namespace Illuminate\Support\Facades {
         public static function all()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::all();
+            return \ChaoticWave\CryptoWars\Console\Kernel::all();
         }
         
         /**
@@ -1454,7 +1454,7 @@ namespace Illuminate\Support\Facades {
         public static function output()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \ChaoticWave\Services\CryptoWars\Console\Kernel::output();
+            return \ChaoticWave\CryptoWars\Console\Kernel::output();
         }
         
         /**
@@ -1466,7 +1466,7 @@ namespace Illuminate\Support\Facades {
         public static function bootstrap()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \ChaoticWave\Services\CryptoWars\Console\Kernel::bootstrap();
+            \ChaoticWave\CryptoWars\Console\Kernel::bootstrap();
         }
         
         /**
@@ -1479,7 +1479,7 @@ namespace Illuminate\Support\Facades {
         public static function setArtisan($artisan)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \ChaoticWave\Services\CryptoWars\Console\Kernel::setArtisan($artisan);
+            \ChaoticWave\CryptoWars\Console\Kernel::setArtisan($artisan);
         }
          
     }
@@ -1648,7 +1648,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \ChaoticWave\Services\CryptoWars\User|null 
+         * @return \ChaoticWave\CryptoWars\User|null 
          * @static 
          */ 
         public static function user()
@@ -1683,7 +1683,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \ChaoticWave\Services\CryptoWars\User|false 
+         * @return \ChaoticWave\CryptoWars\User|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -1747,7 +1747,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \ChaoticWave\Services\CryptoWars\User|false 
+         * @return \ChaoticWave\CryptoWars\User|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -1794,7 +1794,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \ChaoticWave\Services\CryptoWars\User 
+         * @return \ChaoticWave\CryptoWars\User 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -1896,7 +1896,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \ChaoticWave\Services\CryptoWars\User|null 
+         * @return \ChaoticWave\CryptoWars\User|null 
          * @static 
          */ 
         public static function getUser()
@@ -1942,7 +1942,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \ChaoticWave\Services\CryptoWars\User 
+         * @return \ChaoticWave\CryptoWars\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 

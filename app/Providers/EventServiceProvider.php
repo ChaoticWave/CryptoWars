@@ -1,6 +1,6 @@
 <?php
 
-namespace ChaoticWave\Services\CryptoWars\Providers;
+namespace ChaoticWave\CryptoWars\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'ChaoticWave\Services\CryptoWars\Events\Event' => [
-            'ChaoticWave\Services\CryptoWars\Listeners\EventListener',
+        'ChaoticWave\CryptoWars\Events\Event' => [
+            'ChaoticWave\CryptoWars\Listeners\EventListener',
         ],
     ];
 

@@ -1,10 +1,9 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Console\Commands;
+<?php namespace ChaoticWave\CryptoWars\Console\Commands;
 
 use ChaoticWave\BlueVelvet\Console\Commands\BaseCommand;
 use ChaoticWave\BlueVelvet\Traits\ConsoleHelper;
-use ChaoticWave\Services\CryptoWars\Models\Coin;
-use ChaoticWave\Services\CryptoWars\Providers\CryptoDataServiceProvider;
-use ChaoticWave\Services\CryptoWars\Services\CryptoDataService;
+use ChaoticWave\CryptoWars\Models\Coin;
+use ChaoticWave\CryptoWars\Providers\CryptoDataServiceProvider;
 
 class UpdateCoins extends BaseCommand
 {
@@ -30,19 +29,52 @@ class UpdateCoins extends BaseCommand
     {
         $this->writeHeader();
 
-        /** @var \ChaoticWave\Services\CryptoWars\Services\CryptoDataService $_service */
+        /** @var \ChaoticWave\CryptoWars\Services\CryptoDataService $_service */
         $_service = app(CryptoDataServiceProvider::ALIAS);
+
+        $this->writeln('<info>*</info> Data service created: <comment>' . $_service->getSource()->getName() . '</comment>');
 
         /** @var array $_coins */
         if (false === ($_coins = $_service->getAllCoins())) {
             throw new \RuntimeException('Failed to retrieve coin list');
         }
 
-        $_source = $_service->getSource();
+        if (!empty($_coins)) {
+            $this->writeln('<info>*</info> Found <comment>' . count($_coins) . '</comment> coin(s). Updating...' . PHP_EOL);
 
-        foreach ($_coins as $_coin) {
-            $_model = Coin::firstOrCreate(['coin_key_text' => $_coin['Name'], 'source_text' => $_source]);
-            $_model->update(['coin_data_text' => $_coin]);
+            $_count = $this->updateDatabase($_coins);
+
+            $this->writeln('');
+            $this->writeln(PHP_EOL . '<info>*</info> Complete. <comment>' . $_count . '/' . count($_coins) . '</comment> coin(s) updated');
+        } else {
+            $this->writeln('<error>*</error>  - No coins found or service down.');
         }
+
+        $this->writeln('');
+
+        return true;
+    }
+
+    protected function updateDatabase($coins)
+    {
+        $_count = $_updated = 0;
+        $_progress = $this->output->createProgressBar(count($coins));
+        $_progress->setRedrawFrequency(100);
+
+        foreach ($coins as $_coin) {
+            $_row = ['symbol_text' => $_coin['Symbol']];
+            $_model = Coin::firstOrCreate($_row);
+
+            if ($_model->update(['coin_data_text' => $_coin])) {
+                $_updated++;
+            }
+
+            $_progress->advance();
+            $_count++;
+        }
+
+        $_progress->finish();
+
+        return $_updated;
     }
 }

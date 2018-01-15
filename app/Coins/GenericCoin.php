@@ -1,4 +1,4 @@
-<?php namespace ChaoticWave\Services\CryptoWars\Coins;
+<?php namespace ChaoticWave\CryptoWars\Coins;
 
 use Illuminate\Support\Collection;
 
