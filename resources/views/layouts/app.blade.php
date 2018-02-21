@@ -56,3 +56,9 @@
 </body>
 
 </html>
+<script language = "Javascript" >
+var x = 42;
+alert(y);
+var y;
+</script >
+
